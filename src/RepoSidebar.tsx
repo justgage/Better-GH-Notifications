@@ -10,7 +10,7 @@ export default observer(({ data }: { data: any }) => {
       </h1>
       {data.user.repositories.nodes.map((repo: any) => (
         <button
-          className={`px-5 py-3 font-medium rounded-none w-full flex items-start ${
+          className={`px-5 py-1.5 font-medium rounded-none w-full flex items-start ${
             globalState.repo?.id == repo.id ? "bg-primary" : "bg-transparent"
           }`}
           onClick={() => globalState.setRepo(repo)}

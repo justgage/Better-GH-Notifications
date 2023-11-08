@@ -38,7 +38,7 @@ export const RepoView = observer(({ repo }: any) => {
               src={pr.author.avatarUrl}
               className="w-8 h-8 float-left rounded-full mr-2"
             />
-            <h2 className="text-xl pt-1 my-0">{pr.title}</h2>
+            <h2 className="text-sm pt-1 my-0">{pr.title}</h2>
             <div className="ml-10 flex gap-2 opacity-60">
               <ReactTimeAgo date={pr.createdAt} locale="en-US" />
               <span className="text-green-500"> +{pr.additions}</span>{" "}
@@ -49,11 +49,11 @@ export const RepoView = observer(({ repo }: any) => {
             </div>
           </button>
 
-          <div className="pl-5">
+          <div>
             {selectedPR === pr ? (
-              <div>
+              <div className="border-0 border-l-2 pl-5 border-solid border-primary">
                 <div
-                  className="mt-2 opacity-80 rounded-lg p-2"
+                  className="opacity-80 rounded-lg p-2"
                   dangerouslySetInnerHTML={{ __html: pr.bodyHTML }}
                 ></div>
                 {pr.comments.nodes.map((comment: any) => (
